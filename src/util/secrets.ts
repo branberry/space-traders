@@ -17,3 +17,16 @@ export function getAgentToken(): string {
     return '';
   }
 }
+
+const agentToken = getAgentToken();
+
+const options: RequestInit = {
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${agentToken}`,
+  },
+};
+
+export function getRequestOptions() {
+  return options;
+}
