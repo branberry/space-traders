@@ -1,3 +1,5 @@
+import { Dashboard } from '@/components/server/Dashboard';
+
 export default function Home() {
-  return <h1>space traders</h1>;
+  return <Dashboard />;
 }
