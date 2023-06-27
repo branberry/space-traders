@@ -2,6 +2,8 @@ import { getRequestOptions } from '../secrets';
 
 export async function getAgentStatus() {
   const options = getRequestOptions();
+  console.log(options);
+
   const agentStatus = await fetch(
     'https://api.spacetraders.io/v2/my/agent',
     options
@@ -9,3 +11,5 @@ export async function getAgentStatus() {
 
   return agentStatus.json();
 }
+
+export async function getAgentLocation() {}

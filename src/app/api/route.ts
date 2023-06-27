@@ -1,10 +1,7 @@
-import { readFileSync } from 'fs';
+import { getAgentStatus } from '@/util/agent';
 import { NextRequest, NextResponse } from 'next/server';
-import { join } from 'path';
-
-const accountInfoPath = join(__dirname, '../../../../secret.json');
-const accountInfo = JSON.parse(readFileSync(accountInfoPath).toString());
 
 export async function GET(_request: NextRequest) {
-  return NextResponse.json({ ...accountInfo });
+  const agentStatus = await getAgentStatus();
+  return NextResponse.json(agentStatus);
 }
