@@ -2,8 +2,9 @@
 
 import { Canvas, ThreeElements, useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
+import { Room } from './components/Room';
 
-function Box(props: ThreeElements['mesh']) {
+export function Box(props: ThreeElements['mesh']) {
   const mesh = useRef<THREE.Mesh>(null!);
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
@@ -28,8 +29,7 @@ export function Scene() {
     <Canvas>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <Box position={[-1.2, 0, 0]} />
-      <Box position={[1.2, 0, 0]} />
+      <Room />
     </Canvas>
   );
 }
